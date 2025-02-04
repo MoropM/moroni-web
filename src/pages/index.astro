@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PictureImg from '../components/PictureImg.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+
+---
+
+<Layout title="Moroni Pérez M. - Ing. de software">
+	<Header class:list={`md:justify-end`}/>
+	<main class="max-w-[550px]">
+		<PictureImg />
+		<section class="w-full text-center pb-3">
+			<h1 class="text-2xl md:text-3xl font-bold">Moroni Pérez Méndez</h1>
+			<h3 class="text-xl ">Desarrollador de software</h3>
+
+			<p class="mt-3 text-pretty text-white/60">Desarrollando de software con <span class="emphasis_text font-bold">más de 5 años de experiencia</span>, enfocado en la experiencia del usuario.</p>
+			<p class="mb-3 text-pretty text-white/60">Con experniencia en <span class="emphasis_text font-bold">dirección de proyectos, diseño y resolución de problemas.</span></p>
+
+			<ul class="flex justify-center gap-4 my-3 flex-wrap ">
+				<li>
+					<SocialIcons href="https://linkedin.com/in/moroni-p-876b22122" >
+						<LinkedIn class="size-4 md:size-5" />
+						LinkedIn
+					</SocialIcons>
+				</li>
+				<li>
+					<SocialIcons href="https://github.com/MoropM" style="hover:bg-white/50 " >
+						<GitHubIcon class="size-4 md:size-5" />
+						GitHub
+					</SocialIcons>
+				</li>
+				<!-- <li>
+					<SocialIcons href="mailto:moroni@gmail.com" >
+						<xIcon class="size-4 md:size-5" />
+						moroni@gmail.com
+					</SocialIcons>
+				</li> -->
+			</ul>
+			<div class="py-3 flex flex-col md:flex-row gap-5">
+				<a href="https://cv.moroniperezm.com/"
+					target="_blank" 
+					rel="noopener noreferrer" 
+					class="
+						w-full
+						rounded-full border 
+						flex justify-center items-center gap-x-2 
+						p-2  md:px-4 
+						text-base
+						border-[var(--color-m)] 
+						text-[var(--color-m)]
+						bg-white 
+						hover:bg-[var(--color-m)] hover:text-white
+						transition"
+						>
+					Curriculum
+					<svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+					  </svg>
+				</a>
+				<a href="/portfolio"
+					
+					rel="noopener noreferrer" 
+					class="
+						w-full
+						rounded-full border 
+						flex justify-center items-center gap-x-2 
+						p-2  md:px-4 
+						text-base
+						border-[var(--color-m)] 
+						text-[var(--color-m)]
+						bg-white 
+						hover:scale-105 hover:bg-[var(--color-m)] hover:text-white
+						transition"
+						>
+					Portafolio
+					<!-- <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+					  </svg> -->
+					  
+				</a>
+			</div>
+		</section>
+		
+	</main>
+</Layout>
