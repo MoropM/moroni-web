@@ -65,7 +65,7 @@ const PROJECTS = [
     },
     {
         title: "Celebrations",
-        description: "Un proyecto privado para la la organización de celebraciones, con la finalidad de getionar eventos.",
+        description: "Un proyecto privado para la organización de celebraciones, con la finalidad de getionar eventos.",
         link: "https://celebrations.spivet.com.mx/login",
         github: "",
         image: "/projects/celebrations.webp",
@@ -75,9 +75,18 @@ const PROJECTS = [
     {
         title: "SIGMMASoft",
         description: "Proyecto privado para el sector médico. Con la finalidad de levantar los tickets asignados a un técnoco o cuadrilla, para el devido mantenimiento de los sistemas de salud.",
-        link: "https://sigmmasoft.com/",
+        link: "https://www.sigmmasoft.com/",
         github: "",
         image: "/projects/sigmma.webp",
+        isPrivate: true,
+        tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+    },
+    {
+        title: "ERP - PRW",
+        description: "Sistema de Planificación de Recursos Empresariales (ERP) para empresa del sector salud.",
+        link: "https://www.sigmmasofterp.com/",
+        github: "",
+        image: "/projects/erp.webp",
         isPrivate: true,
         tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
     },
@@ -87,15 +96,15 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, link, github, image, tags, isPrivate }) => (
         
-        <article class="max-w-[360px]">
+        <article class="w-full md:max-w-[340px] lg:max-w-[350px]  p-2 m-2 rounded art_card">
             <h3 class="text-2xl font-semibold mb-2 emphasis_text " >{title} {
             isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>
         } </h3>
             <p class="text-md text-pretty mb-4">{description}</p>
             <ul class="flex gap-x-2 flex-row flex-wrap mb-2">
                 {tags.map(tag=>(
-                    <li>
-                        <span class={` flex gap-x-2 rounded-full text-xs bg-black text-white ${tag.class} py-2 px-2`}>
+                    <li class="mb-2">
+                        <span class={` flex gap-x-2 rounded-full text-xs tags_p text-white ${tag.class} py-2 px-2`}>
                             <tag.icon class="size-4" />
                             {tag.name}
                         </span>
@@ -112,3 +121,12 @@ const PROJECTS = [
         </article>
     ))
 }
+
+<style>
+    .tags_p {
+        background-color: light-dark( rgba(4, 25, 99, 0.378), rgba(62, 62, 62, 0.356) );
+    }
+    .art_card {
+        box-shadow: 0 4px 6px light-dark( rgba(4, 25, 99, 0.299), rgba(127, 127, 127, 0.321) );
+    }
+</style>
