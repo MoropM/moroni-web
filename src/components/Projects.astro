@@ -66,7 +66,8 @@ const PROJECTS = [
     {
         title: "Celebrations",
         description: "Un proyecto privado para la organización de celebraciones, con la finalidad de getionar eventos.",
-        link: "https://celebrations.spivet.com.mx/login",
+        // link: "https://celebrations.spivet.com.mx/login",
+        link: "/projects/celebrations.webp",
         github: "",
         image: "/projects/celebrations.webp",
         isPrivate: true,
@@ -75,7 +76,8 @@ const PROJECTS = [
     {
         title: "SIGMMASoft",
         description: "Proyecto privado para el sector médico. Con la finalidad de levantar los tickets asignados a un técnoco o cuadrilla, para el devido mantenimiento de los sistemas de salud.",
-        link: "https://www.sigmmasoft.com/",
+        // link: "https://www.sigmmasoft.com/",
+        link: "/projects/sigmma.webp",
         github: "",
         image: "/projects/sigmma.webp",
         isPrivate: true,
@@ -84,7 +86,8 @@ const PROJECTS = [
     {
         title: "ERP - PRW",
         description: "Sistema de Planificación de Recursos Empresariales (ERP) para empresa del sector salud.",
-        link: "https://www.sigmmasofterp.com/",
+        // link: "https://www.sigmmasofterp.com/",
+        link: "/projects/erp.webp",
         github: "",
         image: "/projects/erp.webp",
         isPrivate: true,
@@ -96,7 +99,7 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, link, github, image, tags, isPrivate }) => (
         
-        <article class="w-full md:max-w-[340px] lg:max-w-[350px]  p-2 m-2 rounded art_card">
+        <article class="w-full md:max-w-[350px] lg:max-w-[380px] p-2 mb-4 rounded-xl flex flex-col justify-between art_card">
             <h3 class="text-2xl font-semibold mb-2 emphasis_text " >{title} {
             isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>
         } </h3>
@@ -113,7 +116,7 @@ const PROJECTS = [
             </ul>
             <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
                 <img
-                    class="rounded shadow-2xl shadow-white/10 w-full min-w-[250px]"
+                    class=" shadow-2xl shadow-white/10 w-full min-w-[250px] max-w-[300px] m-auto rounded-sm aspect-video"
                     src={image}
                     alt={`Captura de pantalla del proyecto ${title}`}
                 />
@@ -124,9 +127,10 @@ const PROJECTS = [
 
 <style>
     .tags_p {
-        background-color: light-dark( rgba(4, 25, 99, 0.378), rgba(62, 62, 62, 0.356) );
+        background-color: light-dark( rgba(205, 205, 205, 0.958), rgba(77, 77, 77, 0.475) );
     }
     .art_card {
-        box-shadow: 0 4px 6px light-dark( rgba(4, 25, 99, 0.299), rgba(127, 127, 127, 0.321) );
+        background-color: light-dark(rgba(242, 242, 242, 0.788), rgb(27, 27, 27));
+        box-shadow: 0 3px 7px 1px light-dark( rgba(4, 25, 99, 0.23), rgba(218, 218, 218, 0.241) );
     }
 </style>

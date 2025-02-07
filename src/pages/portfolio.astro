@@ -19,15 +19,15 @@ import PictureImg from '../components/PictureImg.astro';
         </nav>
     </Header>
     <SectionContainer id="projects" class="py-40">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 ">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 " transition:name="portfolio_init" >
             <CodeIcon class="size-7" /> Proyectos
         </h2>
-        <div class="w-full flex flex-col md:justify-between lg:justify-self-start md:flex-row flex-wrap gap-4">
+        <div class="grid gap-8 mb-6 lg:mb-16 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto max-w-[600px">
             <Projects />
         </div>
     </SectionContainer>
     
-    <SectionContainer id="about-me" class="py-20 ">
+    <SectionContainer id="about-me" class="mt-8 ">
         <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 ">
             <CodeIcon class="size-7" /> Sobre mí
         </h2>

@@ -37,7 +37,20 @@ const { class: className } = Astro.props;
     }
     .header {
         a:hover {
-            color: var(--color-yellow);
+            position: relative;
+            /* color: var(--color-yellow);
+            text-shadow: 0px .5px light-dark(#ac9601, transparent);  */
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: light-dark(#ac9601, var(--color-yellow));
+                transition: all 0.3s ease;
+            }
+            /* border-bottom: var(--color-yellow) 2px solid; */
         }
     }
     .logo--content {
