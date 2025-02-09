@@ -53,7 +53,11 @@ const uriDomain = "https://moroniperezm.com/";
 	:root {
 		color-scheme: light dark;
 		--color-m: #058ce6f5;
-		--color-yellow: rgb(254 240 138 / var(--tw-text-opacity, 1))
+		--color_wText: #fff9;
+		--color_lText: #454545;
+		--color-yellow: rgb(254 240 138 / var(--tw-text-opacity, 1));
+		--color-yellow_dark: #ac9601;
+		--header_height: 70px;
 	}
 	* {
 		margin: 0;
@@ -90,8 +94,7 @@ const uriDomain = "https://moroniperezm.com/";
 	.emphasis_text {
 		color: var(--color-m);
 		&:hover {
-			color: var(--color-yellow);
-			
+			color: light-dark(var(--color-yellow_dark), var(--color-yellow));
 		}
 		transition: color 0.3s ease;
 	}
