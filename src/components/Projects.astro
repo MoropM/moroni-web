@@ -10,37 +10,46 @@ import PythonIcon from '../icons/Python.astro';
 const TAGS = {
     LARAVEL: {
         name: "Laravel",
-        class: "hover:bg-[#ff2d2045] transition",
+        // class: "transition hover:bg-[#ff2d2045] ",
+        class: "transition",
+        colors: "--bg_hover: rgb(255 45 32 / 84%); --bgdark_hover: rgb(255 45 32 / 43%);",
         icon: LaravelIcon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        class: "hover:bg-[#003159] transition", // hover:text-[#73bcf6]
+        class: "transition", // hover:text-[#73bcf6]
+        colors: "--bg_hover: rgb(0 49 89 / 84%); --bgdark_hover: rgb(0 49 89 / 43%);",
         icon: TailwindIcon,
     },
     HTML: {
         name: "HTML",
-        class: "hover:bg-[#e34f266e] transition",
+        // class: "hover:bg-[#e34f266e] transition",
+        class: "transition", 
+        colors: "--bg_hover: rgb(227 79 38 / 84%); --bgdark_hover: rgb(227 79 38 / 43%);",
         icon: HtmlIcon,
     },
     CSS: {
         name: "CSS",
-        class: "hover:bg-[#66339999] transition",
+        class: "transition",
+        colors: "--bg_hover: rgb(102 51 153 / 84%); --bgdark_hover: rgb(102 51 153 / 43%);",
         icon: CssIcon,
     },
     JAVASCRIPT: {
         name: "JavaScript",
         class: "hover:bg-[#f0db4f6e] transition",
+        colors: "--bg_hover: rgb(240 219 79 / 84%); --bgdark_hover: rgb(240 219 79 / 43%);",
         icon: JavascriptIcon,
     },
     MYSQL: {
         name: "MySQL",
-        class: "hover:bg-[#00546b80] transition",
+        class: "transition hover_white",
+        colors: "--bg_hover: rgb(0 84 107 / 84%); --bgdark_hover: rgb(0 84 107 / 43%);",
         icon: MysqlIcon,
     },
     PYTHON: {
         name: "Python",
-        class: "hover:bg-[#387eb891] transition",
+        class: "transition",
+        colors: "--bg_hover: rgb(56 126 184 / 84%); --bgdark_hover: rgb(56 126 184 / 43%);",
         icon: PythonIcon,
     },
 }
@@ -118,8 +127,8 @@ const PROJECTS = [
             <ul class="flex gap-x-2 flex-row flex-wrap mb-2">
                 {tags.map(tag=>(
                     <li class="mb-2">
-                        <span class={` flex gap-x-2 rounded-full text-xs tags_p text-white ${tag.class} py-2 px-2`}>
-                            <tag.icon class="size-4" />
+                        <span class={` flex items-center gap-x-2 rounded-full text-xs ${tag.class} tags_p text-white  py-2 px-2 `} style={tag.colors??''} >
+                            <tag.icon class="size-3" />
                             {tag.name}
                         </span>
                     </li>
@@ -139,6 +148,22 @@ const PROJECTS = [
 <style>
     .tags_p {
         background-color: light-dark( rgba(205, 205, 205, 0.958), rgba(77, 77, 77, 0.475) );
+        cursor: pointer;
+        &:hover {
+            background-color: light-dark(  var(--bg_hover), var(--bgdark_hover));
+            svg {
+                scale: 1.15;
+            }
+        }
+        &.hover_white {
+            &:hover {
+                svg {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+        }
     }
     .art_card {
         background-color: light-dark(rgba(242, 242, 242, 0.788), rgb(27, 27, 27));
