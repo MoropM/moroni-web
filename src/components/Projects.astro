@@ -48,7 +48,7 @@ const PROJECTS = [
     {
         title: "SCCode - Simple Creation Code",
         description: "Editor de código simple para HTML, CSS y JS. Crea proyectos simples sin necesidad de un editor instalado, comienza a poner en practica tus habilidades de programación.",
-        link: "https://sccode-3xq.pages.dev/",
+        link: "https://sccode.moropm.com",
         github: "https://github.com/MoropM/sccode",
         image: "/projects/sscode.webp",
         isPrivate: false,
@@ -109,10 +109,12 @@ const PROJECTS = [
     PROJECTS.map(({ title, description, link, github, image, tags, isPrivate }) => (
         
         <article class="w-full md:max-w-[350px] lg:max-w-[380px] p-2 mb-4 rounded-xl flex flex-col justify-between art_card">
-            <h3 class="text-2xl font-semibold mb-2 emphasis_text " >{title} {
-            isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>
-        } </h3>
-            <p class="text-md text-pretty mb-4">{description}</p>
+            <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
+                <h3 class="text-2xl font-semibold mb-2 emphasis_text " >{title} {
+                    isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
+                </h3>
+            </a>
+            <p class="text-sm md:text-md text-pretty mb-4">{description}</p>
             <ul class="flex gap-x-2 flex-row flex-wrap mb-2">
                 {tags.map(tag=>(
                     <li class="mb-2">
