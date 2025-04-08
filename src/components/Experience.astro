@@ -1,0 +1,259 @@
+---
+
+import BuildingIcon from '../icons/Building.astro'
+import LaravelIcon from '../icons/Laravel.astro';
+import TailwindIcon from '../icons/Tailwind.astro';
+import HtmlIcon from '../icons/Html.astro';
+import CssIcon from '../icons/Css.astro';
+import JavascriptIcon from '../icons/Javascript.astro';
+import MysqlIcon from '../icons/Mysql.astro';
+import PythonIcon from '../icons/Python.astro';
+import PhpIcon from '../icons/PhpIcon.astro';
+import DelphiIcon from '../icons/Delphi.astro';
+
+const TAGS = {
+    LARAVEL: {
+        name: "Laravel",
+        class: "transition hover:bg-[#ff2d2045]  cursor-pointer",
+        colors: "--bg_hover: rgb(255 45 32 / 84%); --bgdark_hover: rgb(255 45 32 / 43%);",
+        icon: LaravelIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "transition", // hover:text-[#73bcf6]
+        colors: "--bg_hover: rgb(0 49 89 / 84%); --bgdark_hover: rgb(0 49 89 / 43%);",
+        icon: TailwindIcon,
+    },
+    HTML: {
+        name: "HTML",
+        // class: "hover:bg-[#e34f266e] transition cursor-pointer",
+        class: "transition", 
+        colors: "--bg_hover: rgb(227 79 38 / 84%); --bgdark_hover: rgb(227 79 38 / 43%);",
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "transition cursor-pointer",
+        colors: "--bg_hover: rgb(102 51 153 / 84%); --bgdark_hover: rgb(102 51 153 / 43%);",
+        icon: CssIcon,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "hover:bg-[#f0db4f6e] transition cursor-pointer",
+        colors: "--bg_hover: rgb(240 219 79 / 84%); --bgdark_hover: rgb(240 219 79 / 43%);",
+        icon: JavascriptIcon,
+    },
+    MYSQL: {
+        name: "MySQL",
+        class: "transition hover_white cursor-pointer",
+        colors: "--bg_hover: rgb(0 84 107 / 84%); --bgdark_hover: rgb(0 84 107 / 43%);",
+        icon: MysqlIcon,
+    },
+    PYTHON: {
+        name: "Python",
+        class: "transition cursor-pointer",
+        colors: "--bg_hover: rgb(56 126 184 / 84%); --bgdark_hover: rgb(56 126 184 / 43%);",
+        icon: PythonIcon,
+    },
+    PHP: {
+        name: "PHP",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(79 91 147 / 84%); --bgdark_hover: rgb(79 91 147 / 43%);",
+        icon: PhpIcon,
+    },
+    DELPHI: {
+        name: "Delphi",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(243 38 53 / 84%); --bgdark_hover: rgb(243 38 53 / 43%);",
+        icon: DelphiIcon,
+    },
+}
+const EXPERIENCE = [
+    {
+        company_name: "Piquero Tecnología y Deportes",
+        company_web: "https://piquero.com.mx",
+        date: "Mayo 2021 - Marzo 2025",
+        description: `Ayude en el desarrollo e implementación de distintos proyectos a la medida en función de las necesidades del cliente y proyectos SASS de la empresa. Mejorando y agilizando los procesos de contrucción y colaboración mediante distintas herramientas de desarrollo.`,
+        position: "Desarrollador software",
+        projects_discounted: [
+            {
+                description: `Desarrolle e implemente Celebrations, una aplicación WEB privada para la gestion de eventos (bodas, XV años, cumpleaños, etc).
+                Se ha utilizado para la administración de invitados en una boda y asignación de lugares.`,
+                github: "",
+                image: "/projects/celebrations.webp",
+                isPrivate: true,
+                // link: "https://celebrations.spivet.com.mx/login",
+                link: "/projects/celebrations.webp",
+                sub_title: "",
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                title: "Celebrations",
+            },
+            {
+                description: `SIGMMA Soft, sistema de Gestión de Activos Hospitalarios.
+                Proyecto privado para el sector médico. Con la finalidad de levantar los tickets asignados a un técnico o cuadrilla, para el debido mantenimiento de los sistemas de salud.`,
+                github: "",
+                image: "/projects/sigmma.webp",
+                isPrivate: true,
+                // link: "https://www.sigmmasoft.com/",
+                link: "/projects/sigmma.webp",
+                sub_title: "",
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                title: "SIGMMASoft",
+            },
+            {
+                description: `Sistema de Planificación de Recursos Empresariales (ERP) para empresa del sector salud.
+                Contribuí, desarrolle e implemente un ERP para la misma empresa privada, agilizando y digitalizando el proceso operativo interno de la empresa.`,
+                github: "",
+                image: "/projects/erp.webp",
+                isPrivate: true,
+                // link: "https://www.sigmmasofterp.com/",
+                link: "/projects/erp.webp",
+                sub_title: "",
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                title: "ERP",
+            },
+        ],
+    },
+    {
+        company_name: "(EXSIM) Expertos en Sistemas Microsip",
+        company_web: "https://piquero.com.mx",
+        date: "Julio 2019 - Noviembre 2020",
+        description: `Durante mi estancia en ésta empresa, mi función era el desarrollo y mantenimiento de aplicaciones web y de escritorio para pymes mexicanas, así como al soporte y atención al clientes.
+                Contribuí en la creación e implementación de un aplicación B2B integrada con el ERP de Miscrosip. Permitiendo mejorar el tiempo de entrega y gestión de insumos y mercancía en sus respectivas empresas.`,
+        position: "Desarrollador software junior",
+        projects_discounted: [
+            {
+                description: `Permite al usuario (cliente) realizar el levantamiento de sus pedidos y cotizaciones, administrar sus productos/artículos, listas de precios, catálogo de clientes, entre otras soluciones; así como consultar sus estado de cuenta, facturas y descarga de las mismas, en PDF y XML.
+                Participé activamente en el desarrollo de la API de esta plataforma, utilizando Delphi XE2 como IDE de desarrollo.`,
+                github: "",
+                image: "",
+                isPrivate: false,
+                link: "",
+                sub_title: "(eCommerce para mayoristas integrado a Microsip)",
+                tags: [TAGS.PHP, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.DELPHI ],
+                title: "CelebraB2BGo v1",
+            },
+        ],
+    },
+    {
+        company_name: "Oohel Technologies",
+        company_web: "https://piquero.com.mx",
+        date: "Octubre 2018 - Mayo 2019",
+        description: `Trabajé como desarrollador junior y diseñador gráfico web
+                Responsable del maquetado y creación de páginas web para la empresa.
+                Desarrollé algunos módulos en el ERP de Odoo y parte del desarrollo de aplicaciones móviles.`,
+        position: "Desarrollador software junior",
+        projects_discounted: [
+        ],
+    },
+]
+
+
+// https://flowbite.com/docs/components/timeline/
+
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700"> 
+    <li class="mb-10 ms-6">
+        {
+            EXPERIENCE.map(({company_name, company_web, date, description, position, projects_discounted}) => (
+                <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-gray dark:ring-gray-900 dark:bg-blue-900">
+                    <BuildingIcon />
+                </span>
+                <section class="flex flex-col md:flex-row gap-x-5 mb-4 ms-6">
+                    <div class="content_left min-w-[300px] ">
+                        <h3 class="text-2xl font-semibold mb-2 emphasis_text ">{position}</h3>
+                        <p>{company_name}</p>
+                        <time class="p-0 m-0 text-sm text-gray-400/85 dark:text-white/90">{date}</time>
+                    </div>
+                    <div class="content_right w-full md:col-span-3">
+                        {
+                            description.split('\n').map((text, index) => (
+                                <p class="text-sm md:text-md text-pretty">{text}</p>
+                            ))
+                        }
+                        {/* <ul class="text-sm md:text-md text-pretty mb-4 list-disc" >
+                            {
+                                description.split('\n').map((line, index) => (
+                                    <li class="mb-2">{line}</li>
+                                ))
+                            }
+                        </ul> */}
+                        
+                        { projects_discounted.length > 0 && (
+                                <div class="mt-5">
+                                    <h4 class="text-xl mb-3 ">Proyectos relevantes</h4>
+                                    { projects_discounted.map(({description, link, github, image, sub_title, tags, title, isPrivate}) => (
+                                            <div class="w-full mt-5 mb-5 flex flex-col justify-between pl-4">
+                                                {
+                                                    link!=='' ? (
+                                                        <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
+                                                                <h3 class="text-base font-semibold mb-2  " >🚀 {title} {
+                                                                sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
+                                                                isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
+                                                            </h3>
+                                                        </a>
+                                                    )
+                                                    : (
+                                                        <div class="w-full">
+                                                                <h3 class="text-base font-semibold mb-2  " >🚀 {title} {
+                                                                sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
+                                                                isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
+                                                            </h3>
+                                                        </div>
+                                                    )
+                                                }
+                                                {
+                                                    description.split('\n').map((item) => (
+                                                        <p class="text-sm md:text-md text-pretty mb-2">{item}</p>
+                                                    ))
+                                                }
+                                                <ul class="flex gap-x-2 flex-row flex-wrap my-2">
+                                                    {tags.map(tag=>(
+                                                        <li class="mb-1">
+                                                            <span class={` flex items-center gap-x-2 rounded-full text-xs ${tag.class} tags_p text-white  py-2 px-2 `} style={tag.colors??''} >
+                                                                <tag.icon class="size-3" />
+                                                                {tag.name}
+                                                            </span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            )
+                        }
+                    </div>
+                </section>
+            ))
+        }
+    </li>
+
+
+
+</ol>
+
+
+<style>
+    .tags_p {
+        background-color: light-dark( rgba(205, 205, 205, 0.958), rgba(77, 77, 77, 0.475) );
+        cursor: pointer;
+        &:hover {
+            background-color: light-dark(  var(--bg_hover), var(--bgdark_hover));
+            svg {
+                scale: 1.15;
+            }
+        }
+        &.hover_white {
+            &:hover {
+                svg {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+</style>
