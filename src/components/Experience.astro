@@ -10,6 +10,8 @@ import MysqlIcon from '../icons/Mysql.astro';
 import PythonIcon from '../icons/Python.astro';
 import PhpIcon from '../icons/PhpIcon.astro';
 import DelphiIcon from '../icons/Delphi.astro';
+import PascalIcon from '../icons/PascalIcon.astro';
+import ExternalLink from '../icons/ExternalLink.astro';
 
 const TAGS = {
     LARAVEL: {
@@ -66,6 +68,12 @@ const TAGS = {
         class: "transition cursor-pointer", // #4F5B93
         colors: "--bg_hover: rgb(243 38 53 / 84%); --bgdark_hover: rgb(243 38 53 / 43%);",
         icon: DelphiIcon,
+    },
+    PASCAL: {
+        name: "Object Pascal",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(255 255 255 / 84%); --bgdark_hover: rgb(255 255 255 / 43%);",
+        icon: PascalIcon,
     },
 }
 const EXPERIENCE = [
@@ -130,7 +138,7 @@ const EXPERIENCE = [
                 isPrivate: false,
                 link: "",
                 sub_title: "(eCommerce para mayoristas integrado a Microsip)",
-                tags: [TAGS.PHP, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.DELPHI ],
+                tags: [TAGS.PHP, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PASCAL ],
                 title: "CelebraB2BGo v1",
             },
         ],
@@ -164,7 +172,7 @@ const EXPERIENCE = [
                 <section class="flex flex-col md:flex-row gap-x-5 mb-4 ms-6">
                     <div class="content_left min-w-[300px] ">
                         <h3 class="text-2xl font-semibold mb-2 emphasis_text ">{position}</h3>
-                        <p>{company_name}</p>
+                        <p class="relative text_company_name">{company_name} <a href={company_web} target="_blank" rel="noopener noreferrer" class="link_text">web <ExternalLink class="size-2 inline-block" /></a></p>
                         <time class="p-0 m-0 text-sm text-gray-400/85 dark:text-white/90">{date}</time>
                     </div>
                     <div class="content_right w-full md:col-span-3">
@@ -183,13 +191,13 @@ const EXPERIENCE = [
                         
                         { projects_discounted.length > 0 && (
                                 <div class="mt-5">
-                                    <h4 class="text-xl mb-3 ">Proyectos relevantes</h4>
+                                    <h4 class="text-base mb-3 ">Proyectos relevantes</h4>
                                     { projects_discounted.map(({description, link, github, image, sub_title, tags, title, isPrivate}) => (
                                             <div class="w-full mt-5 mb-5 flex flex-col justify-between pl-4">
                                                 {
                                                     link!=='' ? (
                                                         <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
-                                                                <h3 class="text-base font-semibold mb-2  " >🚀 {title} {
+                                                                <h3 class="text-sm md:text-base font-semibold mb-2  " >🚀 {title} {
                                                                 sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
                                                                 isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
                                                             </h3>
@@ -197,7 +205,7 @@ const EXPERIENCE = [
                                                     )
                                                     : (
                                                         <div class="w-full">
-                                                                <h3 class="text-base font-semibold mb-2  " >🚀 {title} {
+                                                                <h3 class="text-sm md:text-base font-semibold mb-2  " >🚀 {title} {
                                                                 sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
                                                                 isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
                                                             </h3>
@@ -206,13 +214,13 @@ const EXPERIENCE = [
                                                 }
                                                 {
                                                     description.split('\n').map((item) => (
-                                                        <p class="text-sm md:text-md text-pretty mb-2">{item}</p>
+                                                        <p class="text-xs md:text-sm text-pretty mb-2">{item}</p>
                                                     ))
                                                 }
                                                 <ul class="flex gap-x-2 flex-row flex-wrap my-2">
                                                     {tags.map(tag=>(
                                                         <li class="mb-1">
-                                                            <span class={` flex items-center gap-x-2 rounded-full text-xs ${tag.class} tags_p text-white  py-2 px-2 `} style={tag.colors??''} >
+                                                            <span class={` flex items-center gap-x-2 rounded-full text-xs ${tag.class} tags_p text-white  py-1 px-2 `} style={tag.colors??''} >
                                                                 <tag.icon class="size-3" />
                                                                 {tag.name}
                                                             </span>
@@ -254,6 +262,22 @@ const EXPERIENCE = [
                     }
                 }
             }
+        }
+    }
+    
+    .link_text {
+        color: light-dark( var(--color_lText), var(--color_wText) );
+        font-size: 12px;
+        opacity: 0;
+        margin-left: -50px;
+    }
+    .text_company_name:hover .link_text {
+        opacity: 1;
+        margin-left: 0;
+        text-decoration: underline;
+        transition: all 0.3s ease;
+        &:hover {
+            color: light-dark(var(--color-yellow_dark), var(--color-yellow));
         }
     }
 </style>
