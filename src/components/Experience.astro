@@ -98,7 +98,7 @@ const EXPERIENCE = [
             },
             {
                 description: `SIGMMA Soft, sistema de Gestión de Activos Hospitalarios.
-                Proyecto privado para el sector médico. Con la finalidad de levantar los tickets asignados a un técnico o cuadrilla, para el debido mantenimiento de los sistemas de salud.`,
+                Proyecto privado para el sector médico. Con la finalidad de levantar los tickets asignados a un técnico o cuadrilla, para el debido mantenimiento de los sistemas de salud. Contribuí, desarrolle y estuve dando soporte al proyecto durante varios meses.`,
                 github: "",
                 image: "/projects/sigmma.webp",
                 isPrivate: true,
@@ -110,7 +110,7 @@ const EXPERIENCE = [
             },
             {
                 description: `Sistema de Planificación de Recursos Empresariales (ERP) para empresa del sector salud.
-                Contribuí, desarrolle e implemente un ERP para la misma empresa privada, agilizando y digitalizando el proceso operativo interno de la empresa.`,
+                Contribuí, desarrolle, implemente y dí mantenimeinto al ERP para la misma empresa privada, agilizando y digitalizando el proceso operativo interno de la empresa.`,
                 github: "",
                 image: "/projects/erp.webp",
                 isPrivate: true,
@@ -166,7 +166,7 @@ const EXPERIENCE = [
     <li class="mb-10 ms-6">
         {
             EXPERIENCE.map(({company_name, company_web, date, description, position, projects_discounted}) => (
-                <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-gray dark:ring-gray-900 dark:bg-blue-900">
+                <span class="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8 ring-gray dark:ring-gray-900 dark:bg-blue-900 span_icon_timeline">
                     <BuildingIcon />
                 </span>
                 <section class="flex flex-col md:flex-row gap-x-5 mb-4 ms-6">
@@ -245,6 +245,9 @@ const EXPERIENCE = [
 
 
 <style>
+    .span_icon_timeline {
+        background-color: light-dark( white, black);
+    }
     .tags_p {
         background-color: light-dark( rgba(205, 205, 205, 0.958), rgba(77, 77, 77, 0.475) );
         cursor: pointer;
