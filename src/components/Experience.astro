@@ -11,12 +11,14 @@ import PythonIcon from '../icons/Python.astro';
 import PhpIcon from '../icons/PhpIcon.astro';
 import DelphiIcon from '../icons/Delphi.astro';
 import PascalIcon from '../icons/PascalIcon.astro';
+import SassIcon from '../icons/SassIcon.astro';
+import NodejsIcon from '../icons/NodejsIcon.astro';
 import ExternalLink from '../icons/ExternalLink.astro';
 
 const TAGS = {
     LARAVEL: {
         name: "Laravel",
-        class: "transition hover:bg-[#ff2d2045]  cursor-pointer",
+        class: "transition hover:bg-[#ff2d2045] hover_white cursor-pointer",
         colors: "--bg_hover: rgb(255 45 32 / 84%); --bgdark_hover: rgb(255 45 32 / 43%);",
         icon: LaravelIcon,
     },
@@ -75,6 +77,18 @@ const TAGS = {
         colors: "--bg_hover: rgb(255 255 255 / 84%); --bgdark_hover: rgb(255 255 255 / 43%);",
         icon: PascalIcon,
     },
+    SASS: {
+        name: "SASS",
+        class: "transition cursor-pointer hover_white", // #CF649A
+        colors: "--bg_hover: rgb(207 100 154 / 84%); --bgdark_hover: rgb(207 100 154 / 43%);",
+        icon: SassIcon,
+    },
+    NODEJS: {
+        name: "NodeJS",
+        class: "transition cursor-pointer", // #41873F
+        colors: "--bg_hover: rgb(65 135 63 / 84%); --bgdark_hover: rgb(65 135 63 / 43%);",
+        icon: NodejsIcon,
+    },
 }
 const EXPERIENCE = [
     {
@@ -93,7 +107,7 @@ const EXPERIENCE = [
                 // link: "https://celebrations.spivet.com.mx/login",
                 link: "/projects/celebrations.webp",
                 sub_title: "",
-                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.SASS, TAGS.JAVASCRIPT, TAGS.NODEJS, TAGS.MYSQL ],
                 title: "Celebrations",
             },
             {
@@ -105,7 +119,7 @@ const EXPERIENCE = [
                 // link: "https://www.sigmmasoft.com/",
                 link: "/projects/sigmma.webp",
                 sub_title: "",
-                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.SASS, TAGS.JAVASCRIPT, TAGS.NODEJS, TAGS.MYSQL ],
                 title: "SIGMMASoft",
             },
             {
@@ -117,7 +131,7 @@ const EXPERIENCE = [
                 // link: "https://www.sigmmasofterp.com/",
                 link: "/projects/erp.webp",
                 sub_title: "",
-                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MYSQL ],
+                tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.CSS, TAGS.SASS, TAGS.JAVASCRIPT, TAGS.NODEJS, TAGS.MYSQL ],
                 title: "ERP",
             },
         ],
@@ -126,8 +140,9 @@ const EXPERIENCE = [
         company_name: "(EXSIM) Expertos en Sistemas Microsip",
         company_web: "https://exsim.mx/exsim/",
         date: "Julio 2019 - Noviembre 2020",
-        description: `Durante mi estancia en ésta empresa, mi función era el desarrollo y mantenimiento de aplicaciones web y de escritorio para pymes mexicanas, así como al soporte y atención al clientes.
-                Contribuí en la creación e implementación de un aplicación B2B integrada con el ERP de Miscrosip. Permitiendo mejorar el tiempo de entrega y gestión de insumos y mercancía en sus respectivas empresas.`,
+        description: `Durante mi estancia en ésta empresa, mi función era el desarrollo y mantenimiento de aplicaciones web y de escritorio para pymes mexicanas, así como el soporte y atención a clientes vía telefónica y remota.
+
+                Contribuí en la creación e implementación de un aplicación B2B integrada con el ERP de Miscrosip. Permitiendo mejorar el tiempo de entrega y gestión de insumos, y mercancía en sus respectivas empresas.`,
         position: "Desarrollador software junior",
         projects_discounted: [
             {
@@ -178,7 +193,8 @@ const EXPERIENCE = [
                     <div class="content_right w-full md:col-span-3">
                         {
                             description.split('\n').map((text, index) => (
-                                <p class="text-sm md:text-md text-pretty">{text}</p>
+                                text==''?<p class="text-sm md:text-md text-pretty">{text}</p>
+                                :<p class="text-sm m-2"></p>
                             ))
                         }
                         {/* <ul class="text-sm md:text-md text-pretty mb-4 list-disc" >
