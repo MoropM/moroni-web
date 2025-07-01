@@ -185,8 +185,8 @@ const EXPERIENCE = [
                     <BuildingIcon />
                 </span>
                 <section class="flex flex-col md:flex-row gap-x-5 mb-4 ms-6">
-                    <div class="content_left min-w-[350px] ">
-                        <h3 class="text-2xl font-semibold mb-2 emphasis_text ">{position}</h3>
+                    <div class="content_left min-w-[280px] ">
+                        <h3 class="title_position text-2xl font-semibold mb-2 emphasis_text text-balance ">{position}</h3>
                         <p class="relative text_company_name">{company_name} <a href={company_web} target="_blank" rel="noopener noreferrer" class="link_text">web <ExternalLink class="size-2 inline-block" /></a></p>
                         <time class="p-0 m-0 text-sm text-gray-400/85 dark:text-white/90">{date}</time>
                     </div>
@@ -213,7 +213,7 @@ const EXPERIENCE = [
                                                 {
                                                     link!=='' ? (
                                                         <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
-                                                                <h3 class="text-sm md:text-base font-semibold mb-2  " >🚀 {title} {
+                                                                <h3 class="text-sm md:text-base font-semibold mb-2 text-pretty " >🚀 {title} {
                                                                 sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
                                                                 isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
                                                             </h3>
@@ -221,7 +221,7 @@ const EXPERIENCE = [
                                                     )
                                                     : (
                                                         <div class="w-full">
-                                                                <h3 class="text-sm md:text-base font-semibold mb-2  " >🚀 {title} {
+                                                                <h3 class="text-sm md:text-base font-semibold mb-2 text-pretty " >🚀 {title} {
                                                                 sub_title!='' && <span class="text-sm text-gray-300 ">{sub_title}</span>} {
                                                                 isPrivate && <span class="bg-red-100 text-red-800 text-xs font-medium ml-2 px-2.5 py-.5 rounded dark:bg-red-900 dark:text-red-300">Privado</span>}
                                                             </h3>
@@ -290,10 +290,14 @@ const EXPERIENCE = [
         opacity: 0;
         margin-left: -50px;
     }
+    /* .title_position {
+        font-size: clamp(1.2rem, 1.3vw, 1.7rem);
+    } */
     .text_company_name:hover .link_text {
         opacity: 1;
         margin-left: 0;
         text-decoration: underline;
+        text-wrap: pretty;
         transition: all 0.3s ease;
         &:hover {
             color: light-dark(var(--color-yellow_dark), var(--color-yellow));

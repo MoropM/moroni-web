@@ -43,7 +43,6 @@ const { class: className } = Astro.props;
             /* animation-range: entry 0% exit 100%; */
             animation-range: 0 normal;
         }
-
         a.active,
         a:hover {
             position: relative;
@@ -61,29 +60,39 @@ const { class: className } = Astro.props;
             }
             /* border-bottom: var(--color-yellow) 2px solid; */
         }
-
-
     }
     .logo--content {
         img {
             border-radius: 50%;
         }
-        
     }
 
     @keyframes enhance-header {
         0% {
             background-color: transparent;
+            
             /* backdrop-filter: blur(0px); */
         }
         5% {
-            background-color: light-dark(rgb(255 255 255 / 0.5), rgba(27, 27, 27, 0.5));
+            background-color: light-dark(rgb(255 255 255 / 0.8), rgba(27, 27, 27, 0.8));
             
         }
         100% {
             backdrop-filter: blur(18px);
             /* color: var(--color-m); */
             /* box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1); */
+        }
+    }
+
+    @media screen and (width <= 600px) {
+        .header {
+            nav {
+                order: 2;
+                gap: .5rem;
+            }
+        }
+        .logo--content {
+            order: 1;
         }
     }
 </style>
