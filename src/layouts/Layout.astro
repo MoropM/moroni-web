@@ -37,13 +37,17 @@ const uriDomain = "https://moroniperezm.com/";
 		<meta property="og:description" content={description}>
 		<meta property="og:site_name" content={uriDomain}>
 		<ClientRouter />
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 	</head>
 	<body>
 		<slot />
 		<Footer />
 		<!-- <div class="absolute top-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> -->
 		<div class="backdrop_content absolute inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#2a2a2ab3_1px,transparent_1px),linear-gradient(to_bottom,#2a2a2ab3_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-	
+		<div class="fixed bottom-0">
+			<div class="cf-turnstile" data-sitekey="0x4AAAAAABjRQ5Ema1tGt7ki" data-theme="light"></div>
+		</div>
+
 	</body>
 </html>
 
