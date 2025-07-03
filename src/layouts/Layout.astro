@@ -47,7 +47,36 @@ const uriDomain = "https://moroniperezm.com/";
 		<div class="fixed bottom-0">
 			<div class="cf-turnstile" data-sitekey="0x4AAAAAABjRQ5Ema1tGt7ki" data-theme="light"></div>
 		</div>
-
+		<script>
+			const verifyValue = (contentEl=null) => {
+				console.log("Se ingreso");
+				if(contentEl===null)return;
+				const turnstileResponse=contentEl.querySelector('[name="cf-turnstile-response"]')??null;
+				if(turnstileResponse!==null) {
+					if(turnstileResponse?.value!=''){
+						contentEl.setAttribute('style','display:none;');
+					}else{
+						setTimeout(() => verifyValue(contentEl), 300);
+					}
+				}
+			}
+			window.addEventListener('load',()=>{
+				setTimeout(() => {
+					console.clear();
+					const cfTurnstileElement=document.querySelector('.cf-turnstile')??null;
+					if(cfTurnstileElement===null)return;
+					const turnstileResponse=cfTurnstileElement.querySelector('[name="cf-turnstile-response"]')??null;
+					if(turnstileResponse!==null) {
+						if(turnstileResponse?.value=='')cfTurnstileElement.setAttribute('style','display:none;');
+						else{
+							setTimeout(() => {
+								verifyValue(cfTurnstileElement);
+							}, 3000);
+						}
+					}
+				}, 1000);
+			});
+		</script>
 	</body>
 </html>
 
