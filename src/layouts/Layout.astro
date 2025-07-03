@@ -12,6 +12,36 @@ const { title } = Astro.props;
 const description = '"Desarrollando, creando e inhovando. Desarrollador de software con más de 5 años de experiencia.';
 const imageAuthor = "https://avatars.githubusercontent.com/u/31376461?v=4";
 const uriDomain = "https://moroniperezm.com/";
+/* 
+	const verifyValue = (contentEl=null) => {
+		console.log("Se ingreso");
+		if(contentEl===null)return;
+		const turnstileResponse=contentEl.querySelector('[name="cf-turnstile-response"]')??null;
+		if(turnstileResponse!==null) {
+			if(turnstileResponse?.value!=''){
+				contentEl.setAttribute('style','display:none;');
+			}else{
+				setTimeout(() => verifyValue(contentEl), 300);
+			}
+		}
+	}
+	window.addEventListener('load',()=>{
+		setTimeout(() => {
+			console.clear();
+			const cfTurnstileElement=document.querySelector('.cf-turnstile')??null;
+			if(cfTurnstileElement===null)return;
+			const turnstileResponse=cfTurnstileElement.querySelector('[name="cf-turnstile-response"]')??null;
+			if(turnstileResponse!==null) {
+				if(turnstileResponse?.value=='')cfTurnstileElement.setAttribute('style','display:none;');
+				else{
+					setTimeout(() => {
+						verifyValue(cfTurnstileElement);
+					}, 2000);
+				}
+			}
+		}, 8000);
+	});
+*/
 ---
 <!doctype html>
 <html lang="es">
@@ -48,34 +78,7 @@ const uriDomain = "https://moroniperezm.com/";
 			<div class="cf-turnstile" data-sitekey="0x4AAAAAABjRQ5Ema1tGt7ki" data-theme="light"></div>
 		</div>
 		<script>
-			const verifyValue = (contentEl=null) => {
-				console.log("Se ingreso");
-				if(contentEl===null)return;
-				const turnstileResponse=contentEl.querySelector('[name="cf-turnstile-response"]')??null;
-				if(turnstileResponse!==null) {
-					if(turnstileResponse?.value!=''){
-						contentEl.setAttribute('style','display:none;');
-					}else{
-						setTimeout(() => verifyValue(contentEl), 300);
-					}
-				}
-			}
-			window.addEventListener('load',()=>{
-				setTimeout(() => {
-					console.clear();
-					const cfTurnstileElement=document.querySelector('.cf-turnstile')??null;
-					if(cfTurnstileElement===null)return;
-					const turnstileResponse=cfTurnstileElement.querySelector('[name="cf-turnstile-response"]')??null;
-					if(turnstileResponse!==null) {
-						if(turnstileResponse?.value=='')cfTurnstileElement.setAttribute('style','display:none;');
-						else{
-							setTimeout(() => {
-								verifyValue(cfTurnstileElement);
-							}, 2000);
-						}
-					}
-				}, 4000);
-			});
+			const verifyValue=(e=null)=>{if(console.log("Se ingreso"),null===e)return;let l=e.querySelector('[name="cf-turnstile-response"]')??null;null!==l&&(l?.value!=""?e.setAttribute("style","display:none;"):setTimeout(()=>verifyValue(e),300))};window.addEventListener("load",()=>{setTimeout(()=>{console.clear();let e=document.querySelector(".cf-turnstile")??null;if(null===e)return;let l=e.querySelector('[name="cf-turnstile-response"]')??null;null!==l&&(l?.value==""?e.setAttribute("style","display:none;"):setTimeout(()=>{verifyValue(e)},2e3))},8e3)});
 		</script>
 	</body>
 </html>
