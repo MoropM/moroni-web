@@ -13,7 +13,7 @@ const description = 'Desarrollando, creando e inhovando. Desarrollador de softwa
 const imageAuthor = "https://avatars.githubusercontent.com/u/31376461?v=4";
 const uriDomain = "https://moroniperezm.com/";
 
-console.log(Astro.url)
+// console.log(Astro.url)
 
 /* 
 	const verifyValue = (contentEl=null) => {
@@ -67,7 +67,7 @@ console.log(Astro.url)
 				setTimeout(() => verifyValue() , 1000);
 				return;
 			}
-			cfTurnstileElement.setAttribute('style','display:none;');
+			setTimeout(() => cfTurnstileElement.setAttribute('style','display:none;') , 1200);
 		}
 
 	}
@@ -190,5 +190,5 @@ console.log(Astro.url)
 	}
 </style>
 <script>
-	let maxNumVer=0;const verifyValue=()=>{if(++maxNumVer>=5045)return;let e=document.querySelector(".cf-turnstile")??null;if(null===e){verifyValue(),maxNumVer=0;return}let l=e.querySelector('[name="cf-turnstile-response"]')??null;if(null===l){setTimeout(()=>verifyValue(),1e3);return}if(console.clear(),null!==l){if(e?.value==""){setTimeout(()=>verifyValue(),1e3);return}e.setAttribute("style","display:none;")}};window.addEventListener("load",()=>{setTimeout(()=>verifyValue(),800)});
+	let maxNumVer=0;const verifyValue=()=>{if(++maxNumVer>=5045)return;let e=document.querySelector(".cf-turnstile")??null;if(null===e){verifyValue(),maxNumVer=0;return}let l=e.querySelector('[name="cf-turnstile-response"]')??null;if(null===l){setTimeout(()=>verifyValue(),1e3);return}if(console.clear(),null!==l){if(e?.value==""){setTimeout(()=>verifyValue(),1e3);return}setTimeout(()=>e.setAttribute("style","display:none;"),1200)}};window.addEventListener("load",()=>{setTimeout(()=>verifyValue(),800)});
 </script>

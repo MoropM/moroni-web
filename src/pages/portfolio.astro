@@ -15,8 +15,8 @@ import Experience from '../components/Experience.astro';
     <Header class:list={`xl:w-[1120px] mx-auto header`}>
         <nav class="flex flex-row flex-wrap gap-x-10 opacity-80 p-5 text-sm">
             <a href="/">Inicio</a>
-            <a href="#experience">Experiencia</a>
-            <a href="#projects">Proyectos</a>
+            <a href="#experience" >Experiencia</a>
+            <a href="#projects" >Proyectos</a>
             <a href="#about-me">Sobre mí</a>
             <!-- <a href="#contact">Contacto</a> -->
         </nav>
@@ -59,3 +59,33 @@ import Experience from '../components/Experience.astro';
         </div>
     </SectionContainer>
 </Layout>
+
+<script>
+    // const currentUri = new URL(location.href);
+    // const navEl = document.querySelector('nav')??null;
+    // if(navEl!==null && currentUri!==null) {
+    //     const hashUri = currentUri.hash;
+    //     const links = navEl.querySelectorAll('a')??[];
+    //     links.forEach(link => {
+    //         const textContent = link.textContent;
+    //         // if(hashUri.trim()=='' && textContent=='Inicio')link.classList.add('active');
+    //         if(hashUri.trim()=='#experience' && textContent=='Experiencia')link.classList.add('active');
+    //         if(hashUri.trim()=='#projects' && textContent=='Proyectos')link.classList.add('active');
+    //         if(hashUri.trim()=='#about-me' && textContent=='Sobre mí')link.classList.add('active');
+    //         if(link!==null){
+    //             link.addEventListener('click',()=>{
+    //                 links.forEach(linkEl => linkEl.classList.remove('active'));
+    //                 if(link.href.includes('#experience')){
+    //                     link.classList.add('active');
+    //                 }
+    //                 if(link.href.includes('#projects')){
+    //                     link.classList.add('active');
+    //                 }
+    //                 if(link.href.includes('#about-me')){
+    //                     link.classList.add('active');
+    //                 }
+    //             });
+    //         }
+    //     });
+    // }
+</script>
