@@ -6,12 +6,18 @@ import CssIcon from '../icons/Css.astro';
 import JavascriptIcon from '../icons/Javascript.astro';
 import MysqlIcon from '../icons/Mysql.astro';
 import PythonIcon from '../icons/Python.astro';
+import PhpIcon from '../icons/PhpIcon.astro';
+import DelphiIcon from '../icons/Delphi.astro';
+import PascalIcon from '../icons/PascalIcon.astro';
+import SassIcon from '../icons/SassIcon.astro';
+import NodejsIcon from '../icons/NodejsIcon.astro';
+import SqliteIcon from '../icons/SqliteIcon.astro';
+import ViteIcon from '../icons/viteIcon.astro';
 
 const TAGS = {
     LARAVEL: {
         name: "Laravel",
-        // class: "transition hover:bg-[#ff2d2045] ",
-        class: "transition",
+        class: "transition hover:bg-[#ff2d2045] hover_white cursor-pointer",
         colors: "--bg_hover: rgb(255 45 32 / 84%); --bgdark_hover: rgb(255 45 32 / 43%);",
         icon: LaravelIcon,
     },
@@ -23,37 +29,88 @@ const TAGS = {
     },
     HTML: {
         name: "HTML",
-        // class: "hover:bg-[#e34f266e] transition",
+        // class: "hover:bg-[#e34f266e] transition cursor-pointer",
         class: "transition", 
         colors: "--bg_hover: rgb(227 79 38 / 84%); --bgdark_hover: rgb(227 79 38 / 43%);",
         icon: HtmlIcon,
     },
     CSS: {
         name: "CSS",
-        class: "transition",
+        class: "transition cursor-pointer",
         colors: "--bg_hover: rgb(102 51 153 / 84%); --bgdark_hover: rgb(102 51 153 / 43%);",
         icon: CssIcon,
     },
     JAVASCRIPT: {
         name: "JavaScript",
-        class: "hover:bg-[#f0db4f6e] transition",
+        class: "hover:bg-[#f0db4f6e] transition cursor-pointer",
         colors: "--bg_hover: rgb(240 219 79 / 84%); --bgdark_hover: rgb(240 219 79 / 43%);",
         icon: JavascriptIcon,
     },
     MYSQL: {
         name: "MySQL",
-        class: "transition hover_white",
+        class: "transition hover_white cursor-pointer",
         colors: "--bg_hover: rgb(0 84 107 / 84%); --bgdark_hover: rgb(0 84 107 / 43%);",
         icon: MysqlIcon,
     },
     PYTHON: {
         name: "Python",
-        class: "transition",
+        class: "transition cursor-pointer",
         colors: "--bg_hover: rgb(56 126 184 / 84%); --bgdark_hover: rgb(56 126 184 / 43%);",
         icon: PythonIcon,
     },
+    PHP: {
+        name: "PHP",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(79 91 147 / 84%); --bgdark_hover: rgb(79 91 147 / 43%);",
+        icon: PhpIcon,
+    },
+    DELPHI: {
+        name: "Delphi",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(243 38 53 / 84%); --bgdark_hover: rgb(243 38 53 / 43%);",
+        icon: DelphiIcon,
+    },
+    PASCAL: {
+        name: "Object Pascal",
+        class: "transition cursor-pointer", // #4F5B93
+        colors: "--bg_hover: rgb(255 255 255 / 84%); --bgdark_hover: rgb(255 255 255 / 43%);",
+        icon: PascalIcon,
+    },
+    SASS: {
+        name: "SASS",
+        class: "transition cursor-pointer hover_white", // #CF649A
+        colors: "--bg_hover: rgb(207 100 154 / 84%); --bgdark_hover: rgb(207 100 154 / 43%);",
+        icon: SassIcon,
+    },
+    NODEJS: {
+        name: "NodeJS",
+        class: "transition cursor-pointer", // #41873F
+        colors: "--bg_hover: rgb(65 135 63 / 84%); --bgdark_hover: rgb(65 135 63 / 43%);",
+        icon: NodejsIcon,
+    },
+    SQLITE: {
+        name: "SqLite",
+        class: "transition hover_white cursor-pointer ", // #003B57
+        colors: "--bg_hover: rgb(0 59 87 / 84%); --bgdark_hover: rgb(0 59 87 / 43%);",
+        icon: SqliteIcon,
+    },
+    VITE: {
+        name: "Vite",
+        class: "transition  cursor-pointer ", // #FFA800
+        colors: "--bg_hover: rgb(255 168 0 / 84%); --bgdark_hover: rgb(255 168 0 / 43%);",
+        icon: ViteIcon,
+    },
 }
 const PROJECTS = [
+    {
+        title: "Acortador de URLs",
+        description: "Transforma tus enlaces largos en URLs cortas y fáciles de compartir. Ideal para redes sociales, mensajería y cualquier lugar donde necesites simplificar un enlace.",
+        link: "https://links.moropm.com",
+        github: "https://github.com/MoropM/api-shorturi",
+        image: "/projects/short_links.webp",
+        isPrivate: false,
+        tags: [TAGS.LARAVEL, TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.VITE, TAGS.SQLITE ],
+    },
     {
         title: "SCCode - Simple Creation Code",
         description: "Editor de código simple para HTML, CSS y JS. Crea proyectos simples sin necesidad de un editor instalado, comienza a poner en practica tus habilidades de programación.",
@@ -83,6 +140,9 @@ const PROJECTS = [
     },
     
 ]
+
+
+// ? Anteiror clase en img de proyectos:  aspect-video 
 ---
 
 {
@@ -107,7 +167,7 @@ const PROJECTS = [
             </ul>
             <a href={link} target="_blank" rel="noopener noreferrer" class="w-full">
                 <img
-                    class=" shadow-2xl shadow-white/10 w-full min-w-[250px] max-w-[300px] m-auto rounded-sm aspect-video"
+                    class=" shadow-2xl shadow-white/10 w-full min-w-[250px] max-w-[300px] m-auto rounded-sm"
                     src={image}
                     alt={`Captura de pantalla del proyecto ${title}`}
                 />

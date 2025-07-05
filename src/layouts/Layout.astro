@@ -9,9 +9,12 @@ interface Props {
 
 const { title } = Astro.props;
 
-const description = '"Desarrollando, creando e inhovando. Desarrollador de software con más de 5 años de experiencia.';
+const description = 'Desarrollando, creando e inhovando. Desarrollador de software con más de 5 años de experiencia.';
 const imageAuthor = "https://avatars.githubusercontent.com/u/31376461?v=4";
 const uriDomain = "https://moroniperezm.com/";
+
+console.log(Astro.url)
+
 /* 
 	const verifyValue = (contentEl=null) => {
 		console.log("Se ingreso");
@@ -41,6 +44,37 @@ const uriDomain = "https://moroniperezm.com/";
 			}
 		}, 8000);
 	});
+
+	let maxNumVer=0;
+	const verifyValue=()=>{
+		maxNumVer++;
+		if(maxNumVer>=5045)return;
+		const cfTurnstileElement=document.querySelector('.cf-turnstile')??null;
+		if(cfTurnstileElement===null){
+			verifyValue();
+			maxNumVer=0;
+			return;
+		}
+
+		const turnstileResponse=cfTurnstileElement.querySelector('[name="cf-turnstile-response"]')??null;
+		if(turnstileResponse===null) {
+			setTimeout(() => verifyValue() , 1000);
+			return;
+		}
+		console.clear();
+		if(turnstileResponse!==null) {
+			if(cfTurnstileElement?.value==''){
+				setTimeout(() => verifyValue() , 1000);
+				return;
+			}
+			cfTurnstileElement.setAttribute('style','display:none;');
+		}
+
+	}
+	window.addEventListener('load',()=>{
+		setTimeout(() => verifyValue(), 800);
+	});
+	
 */
 ---
 <!doctype html>
@@ -67,19 +101,24 @@ const uriDomain = "https://moroniperezm.com/";
 		<meta property="og:description" content={description}>
 		<meta property="og:site_name" content={uriDomain}>
 		<ClientRouter />
-		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+		{
+			!Astro.url.origin.includes('localhost') && (
+				<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+			)
+		}
 	</head>
 	<body>
 		<slot />
 		<Footer />
 		<!-- <div class="absolute top-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> -->
 		<div class="backdrop_content absolute inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#2a2a2ab3_1px,transparent_1px),linear-gradient(to_bottom,#2a2a2ab3_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-		<div class="fixed bottom-0">
-			<div class="cf-turnstile" data-sitekey="0x4AAAAAABjRQ5Ema1tGt7ki" data-theme="light"></div>
-		</div>
-		<script>
-			const verifyValue=(e=null)=>{if(console.log("Se ingreso"),null===e)return;let l=e.querySelector('[name="cf-turnstile-response"]')??null;null!==l&&(l?.value!=""?e.setAttribute("style","display:none;"):setTimeout(()=>verifyValue(e),300))};window.addEventListener("load",()=>{setTimeout(()=>{console.clear();let e=document.querySelector(".cf-turnstile")??null;if(null===e)return;let l=e.querySelector('[name="cf-turnstile-response"]')??null;null!==l&&(l?.value==""?e.setAttribute("style","display:none;"):setTimeout(()=>{verifyValue(e)},2e3))},8e3)});
-		</script>
+		{
+			!Astro.url.origin.includes('localhost') && (
+				<div class="fixed bottom-0">
+					<div class="cf-turnstile" data-sitekey="0x4AAAAAABjRQ5Ema1tGt7ki" data-theme="light"></div>
+				</div>
+			)
+		}
 	</body>
 </html>
 
@@ -150,3 +189,6 @@ const uriDomain = "https://moroniperezm.com/";
 		}
 	}
 </style>
+<script>
+	let maxNumVer=0;const verifyValue=()=>{if(++maxNumVer>=5045)return;let e=document.querySelector(".cf-turnstile")??null;if(null===e){verifyValue(),maxNumVer=0;return}let l=e.querySelector('[name="cf-turnstile-response"]')??null;if(null===l){setTimeout(()=>verifyValue(),1e3);return}if(console.clear(),null!==l){if(e?.value==""){setTimeout(()=>verifyValue(),1e3);return}e.setAttribute("style","display:none;")}};window.addEventListener("load",()=>{setTimeout(()=>verifyValue(),800)});
+</script>
