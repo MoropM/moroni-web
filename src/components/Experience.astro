@@ -106,6 +106,15 @@ const TAGS = {
 }
 const EXPERIENCE = [
     {
+        company_name: "Grupo Xcaret",
+        company_web: "https://www.xcaret.com/",
+        date: "Diciembre 2025 - Actualidad",
+        description: `Actualmente estoy colaborando en el desarrollo de diferentes proyectos internos para la empresa, así como en la mejora y mantenimiento de las aplicaciones ya existentes.`,
+        position: "Administrador de proyecto",
+        projects_discounted: [
+        ],
+    },
+    {
         company_name: "Piquero Tecnología y Deportes",
         company_web: "https://piquero.com.mx",
         date: "Mayo 2021 - Marzo 2025",
@@ -207,7 +216,7 @@ const EXPERIENCE = [
                     <div class="content_right w-full md:col-span-3">
                         {
                             description.split('\n').map((text, index) => (
-                                text==''?<p class="text-sm md:text-md text-pretty">{text}</p>
+                                text!=''?<p class="text-sm md:text-md text-pretty">{text}</p>
                                 :<p class="text-sm m-2"></p>
                             ))
                         }
