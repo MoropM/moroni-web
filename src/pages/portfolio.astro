@@ -6,6 +6,7 @@ import CodeIcon from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
 import PictureImg from '../components/PictureImg.astro';
 import Experience from '../components/Experience.astro';
+import Certificates from '../components/Certificates.astro';
 
 // pl-4 pr-5
 
@@ -42,16 +43,28 @@ import Experience from '../components/Experience.astro';
             <Projects />
         </div>
     </SectionContainer>
+
+    <SectionContainer id="certificates" class="py-40">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 " >
+            <CodeIcon class="size-7" /> Certificados
+        </h2>
+        <div class="grid gap-8 mb-6 lg:mb-16 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto pl-2 max-w-[600px ">
+            <Certificates />
+        </div>
+    </SectionContainer>
     
     <SectionContainer id="about-me" class="py-40 ">
         <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 ">
             <CodeIcon class="size-7" /> Sobre mí
         </h2>
         <div class="text-md flex flex-col md:flex-row gap-4 pl-2 ">
+            
             <div class="w-full">
-                <p>Soy ingeniero con <span class="emphasis_text font-bold">+5 años de experiencia</span> laboral en el sector, donde recientemente trabajé como <span class="emphasis_text font-bold">desarrollador full stack</span> en una startup. Creando soluciones a la medida, he <span class="emphasis_text font-bold">liderado el desarrollo de algunos proyectos, implementado pasarelas de pago y administrando servicios cloud.</span></p>
-                <p>Me considero una persona alegre, sociable y enfocada en las tareas asignadas, proactivo y perfeccionista en la resolución de problemas.</p>
-                <p><span class="emphasis_text font-bold">Me encuentro en constante aprendizaje</span> ya sea de manera visual, auditiva o social mediante la lectura; actualmente sigo reforzando mi aprendizaje de Laravel como framework de PHP y en algunas metodologías como SCRUM y PMI.</p>
+                <p>Soy Ingeniero en Sistemas con <span class="emphasis_text font-bold">+5 años de experiencia</span> en la industria tecnológica. Actualmente me desempeño como Project Manager en Grupo Xcaret, <span class="emphasis_text font-bold">coordinando iniciativas clave y asegurando la entrega eficiente de soluciones digitales.</span></p>
+
+                <p>Mi trayectoria previa como desarrollador Full Stack en startups me otorga una sólida visión técnica, respaldada por <span class="emphasis_text font-bold">experiencia en el liderazgo de proyectos, integración de pasarelas de pago y administración de infraestructura cloud.</span></p>
+
+                <p>Me distingo por ser una persona <span class="emphasis_text font-bold">proactiva, analítica y orientada a resultados, con alta capacidad para la resolución de problemas y la colaboración en equipo</span>. Mantengo un compromiso constante con el aprendizaje continuo, reforzando metodologías de gestión como Agile/SCRUM y marcos de trabajo como PMI, combinados con una actualización técnica constante.</p>
             </div>
             <div class="w-full flex flex-col justify-center items-center md:justify-normal gap-3">
                 <PictureImg />

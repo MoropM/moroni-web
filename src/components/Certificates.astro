@@ -1,0 +1,44 @@
+---
+
+
+const cetificates = [
+    {
+        title: "Fundamentos de Project Management",
+        description: "Domina la gestión de proyectos desde la planificación hasta el control con ejercicios prácticos. Aprende a definir alcances claros, estructurar tu WBS, secuenciar actividades y construir cronogramas realistas que integren ruta crítica, recursos y duración. Fortalece tus decisiones mediante presupuestos sólidos, curvas S y análisis de valor ganado, logrando proyectos alineados al tiempo, costo y entregables definidos.",
+        link: "/certificates/fundamentos-project-management.pdf",
+        image: "",
+    },
+    {
+        title: "Gestión Efectiva del Tiempo",
+        description: "Aprende a priorizar tareas, vencer la procrastinación y usa la IA para planificar proyectos en minutos. Crea hábitos sólidos, define metas SMART y organiza tu flujo de trabajo con Bullet Journal. Descubre cómo integrar la IA como asistente digital y transforma tus tareas en progreso real.",
+        link: "/certificates/gestion-efectiva-del-tiempo.pdf",
+        image: "",
+    },
+    {
+        title: "Planificación de Proyectos",
+        description: "Domina la planificación, definición e identificación de riesgos en proyectos a través de casos reales. Aprende a usar herramientas como Notion para construir cronogramas efectivos y gestionar stakeholders, tiempo y recursos de manera práctica.",
+        link: "/certificates/planificacion-de-proyectos.pdf",
+        image: "",
+    },
+    {
+        title: "Técnicas de Negociación",
+        description: "Desarrolla habilidades de negociación efectivas descubriendo cómo gestionar conflictos, entender a las partes involucradas, controlar el poder y las emociones. Aprende tácticas clave para crear valor y cerrar exitosamente acuerdos.",
+        link: "/certificates/tecnicas-de-negociacion.pdf",
+        image: "",
+    },
+];
+---
+
+
+{cetificates.map(({ title, description, link, image }) => (
+        <article class="w-full md:max-w-[350px] lg:max-w-[380px] p-2 mb-4 rounded-xl flex flex-col justify-between art_card">
+            <div class="flex flex-col gap-2">
+                <h3 class="text-lg font-semibold">{title}</h3>
+                {/* <p class="text-sm text-pretty text_info">
+                    {description.split(" ").slice(0, 15).join(" ")}{description.split(" ").length > 15 ? "..." : ""}
+                </p> */}
+                <embed src={link} type="application/pdf" class="w-full h-full min-h-60 overflow-hidden" />
+                <a href={link} target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-m)] hover:underline emphasis_text">Ver certificado</a>
+            </div>
+    </article>
+    ))}
